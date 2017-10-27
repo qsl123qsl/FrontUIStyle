@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片动态展现</title>
+	<link rel="stylesheet" type="text/css" href="base.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="moreIntroduce" class="more-introduce clearfix" style="position: relative">
+        <div class="more-introduce-content">
+            <div class="more-introduce-content-inner" style="" id="ul1">
+                <img src="picture/info_img001.jpg">
+                <img src="picture/info_img002.jpg">
+                <img src="picture/info_img003.jpg">
+                <img src="picture/info_img004.jpg">
+            </div>
+        </div>
+        <ul class="more-introduce-list" style="">
+            <li data-index="0" class="active more-introduce-item  more-introduce-item1">
+                <img src="picture/info_img001.jpg">
+            </li>
+           	<li data-index="1" class=" more-introduce-item  more-introduce-item2">
+                <img src="picture/info_img002.jpg">
+            </li>
+            <li data-index="2" class=" more-introduce-item  more-introduce-item3">
+                <img src="picture/info_img003.jpg">
+            </li>
+            <li data-index="3" class=" more-introduce-item  more-introduce-item4">
+                <img src="picture/info_img004.jpg">
+            </li>
+        </ul>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.more-introduce-item').mouseover(function(){
+	    $('.more-introduce-item').removeClass("active");
+	    $(this).addClass("active");
+	    var val= -420*$(this).attr("data-index");
+	    $('.more-introduce-content-inner').css("margin-top",val);
+	});
+
+	var m=0;
+    var s=setTimeout(lun,5000);
+    function lun(){
+        m+=10;
+        $("#ul1").css("marginTop",-m+"px");
+
+        if(m==420||m==840||m==1260){
+            var index = m/420;
+            $('.more-introduce-item').removeClass("active");
+            $('.more-introduce').find('li[data-index='+index+']').addClass("active");
+            setTimeout(lun,5000);
+        }
+        else if(m>=1680){
+            m=0;
+            $("#ul1").css("marginTop",-m+"px");
+            var index = m/420;
+            $('.more-introduce-item').removeClass("active");
+            $('.more-introduce').find('li[data-index='+index+']').addClass("active");
+            s=setTimeout(lun,5000);
+        }else{
+            s=setTimeout(lun,1);
+        }
+    }
+});
+	
+</script>
+</html>

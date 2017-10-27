@@ -1,0 +1,45 @@
+.more-introduce{
+	width: 1200px;padding: 42px 40px;background-color:rgb(255, 255, 255);margin: 0 auto;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.more-introduce-content {
+	width: 880px; height: 420px; overflow: hidden; position: relative;
+}
+
+.more-introduce-content .more-introduce-content-inner {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: absolute;
+}
+
+.more-introduce-content img {
+	width: 880px; height: 100%; display: block;
+}
+
+.more-introduce-list{
+    left: 79%;bottom: 40px;width: 230px;position: absolute;margin: 0;padding: 0;
+}
+
+.more-introduce-list li{
+	position: relative;
+    margin: 0 0 5px 0;
+    list-style: none;
+}
+
+.more-introduce-list .active{
+	border:3px solid #039ae3;
+}
+
+.more-introduce-list li img{
+    width: 220px;  height: 99px;opacity: 0.3;vertical-align: top;/**清除图片下方的出现的几像素，或者将img设为display:block**/
+}
+
+.more-introduce-list li.active img{
+	opacity: 1;
+}
+
+.more-introduce-list .active::before {
+    border-width: 12px; border-style: solid; border-color: transparent #039ae3 transparent transparent; border-image: none; left: -24px; top: 50%; width: 0px; height: 0px; margin-top: -12px; position: absolute; content: "";
+}
