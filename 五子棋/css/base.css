@@ -1,0 +1,14 @@
+.title{
+	text-align: center;
+	width: 450px;
+	font-size: 14px;
+	color: #333333;
+	margin: 50px auto;
+	font-weight: bold;
+}
+
+canvas{
+	display: block;
+	margin: 10px auto;
+	box-shadow: -2px -2px 2px #EFEFEF,5px 5px 5px #B9B9B9;
+}
